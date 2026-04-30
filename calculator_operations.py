@@ -23,3 +23,6 @@ class CalculatorOperation:
         if second_number == 0:
             raise ZeroDivisionError("Cannot divide by zero!!!")
         return first_number // second_number
+
+    def power(self, first_number, second_number):
+        return first_number ** second_number
