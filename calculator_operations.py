@@ -26,3 +26,8 @@ class CalculatorOperation:
 
     def power(self, first_number, second_number):
         return first_number ** second_number
+
+class CalculatorRuntime:
+
+    def __init__(self):
+        self.history_file = "calculator_history.txt"
