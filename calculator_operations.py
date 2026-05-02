@@ -50,6 +50,17 @@ class CalculatorRuntime:
 
         target = input("\nEnter the full name of the currency (or press Enter to skip: ").strip()
 
+        target_formatted = target.title() if target else ""
+
+        if target_formatted in self.currency_rates:
+            converted = amount * self.currency_rates[target_formatted]
+            print(f"\n Converted Value: {converted:,.2f} {target_formatted}")
+            return target_formatted, converted
+
+        if target:
+            print("\n Currency not recognized. Skipping conversion")
+        return None, None
+
     def history_log(self, operation, first_number, second_number, result):
         timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
