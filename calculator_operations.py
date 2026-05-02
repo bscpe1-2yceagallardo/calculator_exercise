@@ -33,8 +33,16 @@ class CalculatorRuntime:
 
     def __init__(self):
         self.history_file = "calculator_history.txt"
+        self.currency_rates = {
+            "United States Dollar": 1.0,
+            "Euro": 0.92,
+            "British Pound Sterling": 0.79,
+            "Japanese Yen": 150.25,
+            "Australian Dollar": 1.52
+        }
 
     def history_log(self, operation, first_number, second_number, result):
         timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
         with open(self.history_file, "a") as history_file:
             history_file.write(f"[{timestamp}] {operation}: {first_number} and {second_number} = {result}\n")
