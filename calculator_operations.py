@@ -61,8 +61,13 @@ class CalculatorRuntime:
             print("\n Currency not recognized. Skipping conversion")
         return None, None
 
-    def history_log(self, operation, first_number, second_number, result):
+    def history_log(self, operation, first_number, second_number, result, conversion_info=None):
         timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        log_entry = f"[{timestamp}] {operation}: {first_number} and {second_number} = {result}\n"
+
+        if conversion_info and conversion_info[0] is not None:
+            name, conversion_value = conversion_info
+            log_entry += f" | Converted to {name}: {conversion_value:,.2f}"
 
         with open(self.history_file, "a") as history_file:
-            history_file.write(f"[{timestamp}] {operation}: {first_number} and {second_number} = {result}\n")
+            history_file.write(log_entry + "\n")
