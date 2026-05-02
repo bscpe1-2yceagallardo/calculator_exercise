@@ -41,6 +41,15 @@ class CalculatorRuntime:
             "Australian Dollar": 1.52
         }
 
+    def convert_currency(self, amount):
+        print("\n--- Convert Your Answer Into Currency ---")
+        print("\nAvailable Currencies:")
+
+        for name in self.currency_rates.keys():
+            print(f" - {name}")
+
+        target = input("\nEnter the full name of the currency (or press Enter to skip: ").strip()
+
     def history_log(self, operation, first_number, second_number, result):
         timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
