@@ -85,3 +85,17 @@ class CalculatorRuntime:
             print("\nOptions: ")
             print(" 1. Addition \n 2. Subtraction \n 3. Multiplication \n 4. Division \n 5. Modulus \n 6. Floor Division \n 7. Power")
             choice = input("\nSelect Option (1-7): ")
+
+            try:
+                first_number = float(input("\nEnter first number: "))
+                second_number = float(input("\nEnter second number: "))
+
+                operation = {
+                    "1": ("Addition", self.addition),
+                    "2": ("Subtraction", self.subtraction),
+                    "3": ("Multiplication", self.multiplication),
+                    "4": ("Division", self.division),
+                    "5": ("Modulus", self.modulus),
+                    "6": ("Floor Division", self.floor_division),
+                    "7": ("Power", self.power)
+                }
