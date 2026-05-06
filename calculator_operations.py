@@ -118,3 +118,8 @@ class CalculatorRuntime:
                 print(f"\nData Processing Error: {error}")
             except Exception as error:
                 print(f"\n Unexpected Error: {error}")
+
+            retry = input("\n Perform another calculations? (y/n): ").strip()
+            if retry not in ['yes', 'y', 'yeah', 'yah']:
+                print("\nClosing Calculator. Goodbye!")
+                active = False
