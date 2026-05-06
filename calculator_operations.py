@@ -38,7 +38,12 @@ class CalculatorRuntime:
             "Euro": 0.92,
             "British Pound Sterling": 0.79,
             "Japanese Yen": 150.25,
-            "Australian Dollar": 1.52
+            "Australian Dollar": 1.52,
+            "Canadian Dollar": 1.35,
+            "Swiss Franc": 0.88,
+            "Chinese Yuan": 7.19,
+            "Hong Kong Dollar": 7.82,
+            "New Zealand Dollar": 1.64
         }
 
     def convert_currency(self, amount):
