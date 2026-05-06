@@ -90,7 +90,7 @@ class CalculatorRuntime:
                 first_number = float(input("\nEnter first number: "))
                 second_number = float(input("\nEnter second number: "))
 
-                operation = {
+                operations = {
                     "1": ("Addition", self.addition),
                     "2": ("Subtraction", self.subtraction),
                     "3": ("Multiplication", self.multiplication),
@@ -99,3 +99,13 @@ class CalculatorRuntime:
                     "6": ("Floor Division", self.floor_division),
                     "7": ("Power", self.power)
                 }
+
+                if choice in operations:
+                    operation_name, function = operations[choice]
+                    raw_result = function(first_number, second_number)
+                    print(f"\nResult: {raw_result}")
+
+                    conversion_info = self.convert_currency(raw_result)
+                    self.history_log(operation_name, first_number, second_number, raw_result, conversion_info)
+                else:
+                    print("\nInvalid choice!")
