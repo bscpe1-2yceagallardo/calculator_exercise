@@ -76,3 +76,12 @@ class CalculatorRuntime:
 
         with open(self.history_file, "a") as history_file:
             history_file.write(log_entry + "\n")
+
+    def run_app(self):
+        print("--- CALCULATOR ---")
+
+        active = True
+        while active:
+            print("\nOptions: ")
+            print(" 1. Addition \n 2. Subtraction \n 3. Multiplication \n 4. Division \n 5. Modulus \n 6. Floor Division \n 7. Power")
+            choice = input("\nSelect Option (1-7): ")
