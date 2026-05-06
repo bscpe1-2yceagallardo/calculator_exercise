@@ -109,3 +109,12 @@ class CalculatorRuntime:
                     self.history_log(operation_name, first_number, second_number, raw_result, conversion_info)
                 else:
                     print("\nInvalid choice!")
+
+            except ValueError:
+                print("\n Error: Please enter numeric values.")
+            except ZeroDivisionError as error:
+                print (f"\n Math Error: {error}")
+            except TypeError as error:
+                print(f"\nData Processing Error: {error}")
+            except Exception as error:
+                print(f"\n Unexpected Error: {error}")
